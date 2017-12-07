@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="Acontactos">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agenda Contactos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+</head>
+
+<body>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div ng-repeat="usuario in list | filter:search track by usuario.id">
+                        <img ng-src="{{usuario.url}}" alt="foto">
+                        <h3>{{usuario.name}}</h3>
+                        <h3>{{usuario.email}}</h3>
+                        <h3>{{usuario.phone}}</h3>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+                    <form name="listaUsuario">
+
+                        <h3>Nombre:</h3>
+                        <input type="text" ng-model="usuarioNuevo.name">
+                        <h3>Email:</h3>
+                        <input ng-required="true" name="correo" type="email" ng-model="usuarioNuevo.email">
+                        <h3>Teléfono:</h3>
+                        <input type="tel" ng-model="usuarioNuevo.tel">
+                        <h3>Foto</h3>
+                        <input type="url" ng-model="usuarioNuevo.otro">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+    </section>
+
+
+
+
+    <script src="js/main.js"></script>
+    <script></script>
+    <script></script>
+    <script src="js/main.controller.js"></script>
+
+</body>
+
+</html>
